@@ -24,7 +24,7 @@ jobs:
         uses: android-actions/setup-android@v4
 
       - name: Install Android SDK
-        run: yes | sdkmanager --licenses && sdkmanager "platform-tools" "platforms;android-37"
+        run: yes | sdkmanager --licenses &&  sdkmanager "platform-tools"  "platforms;android-37"
 
       - name: Extract Android project
         run: |
