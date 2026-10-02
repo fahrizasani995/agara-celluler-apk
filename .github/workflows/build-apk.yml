@@ -20,17 +20,16 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+
       - name: Install Android SDK
-        run: |
-          yes | sdkmanager --licenses
-‎          sdkmanager --update
-          sdkmanager "platform-tools"
-          sdkmanager "platforms;android-37"
+        run: yes | sdkmanager --licenses && sdkmanager "platform-tools" "platforms;android-37"
 
       - name: Extract Android project
         run: |
-          mkdir -p build-source
-          unzip -q AgaraCellulerAPK_Phase3.zip -d build-source
+         mkdir -p build-source
+         unzip -q AgaraCellullerAPK_Phase3.zip -d build-source
 
           SETTINGS_FILE=$(find build-source -name "settings.gradle.kts" -type f | head -n 1)
 
