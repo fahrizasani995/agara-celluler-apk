@@ -22,6 +22,8 @@ jobs:
 
       - name: Install Android SDK
         run: |
+          yes | sdkmanager --licenses
+‎          sdkmanager --update
           sdkmanager "platform-tools"
           sdkmanager "platforms;android-37"
 
